@@ -1,0 +1,207 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear_bg"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#1A1A2E"
+		android:orientation="vertical"
+		android:weightSum="1">
+		<LinearLayout
+			android:id="@+id/linear_top"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<TextView
+				android:id="@+id/title_app_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="@string/app_name"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:layout_weight="1" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear_autosort_switcher"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="2dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="horizontal">
+			<Switch
+				android:id="@+id/switch_auto_sort"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="3dp"
+				android:gravity="center_vertical"
+				android:text="Автосортировка включена  "
+				android:textSize="16sp"
+				android:checked="true"
+				android:thumb="@drawable/thumb"
+				android:track="@drawable/track" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear_action_buttons"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical">
+			<Button
+				android:id="@+id/button_sort_now"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="5dp"
+				android:padding="8dp"
+				android:text="Отсортировать сейчас"
+				android:textSize="16sp"
+				android:background="@drawable/bg_button_primary"
+				android:textColor="@color/color_button_text"
+				android:textStyle="bold" />
+			<Button
+				android:id="@+id/button_only_new"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:padding="8dp"
+				android:text="Только новые файлы"
+				android:textSize="17sp"
+				android:background="@drawable/bg_button_primary"
+				android:textColor="@color/color_button_text"
+				android:textStyle="bold" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear_settings_bg"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical"
+			android:background="@drawable/bg_card"
+			android:layout_margin="8dp">
+			<LinearLayout
+				android:id="@+id/linear_header"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/title_settings_drop_down"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="2dp"
+					android:paddingBottom="8dp"
+					android:text="Настройки"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					android:textColor="@color/color_text_primary" />
+				<LinearLayout
+					android:id="@+id/linear_dp_img"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+					<ImageView
+						android:id="@+id/imageview_drop_down"
+						android:layout_width="30dp"
+						android:layout_height="wrap_content"
+						android:src="@drawable/icon_arrow_drop_down_round"
+						android:scaleType="centerCrop" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear_settings"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/linear_sort_downloads"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:orientation="horizontal">
+					<RadioButton
+						android:id="@+id/radiobutton_sort_download"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Сортировка только &quot;Скачанное&quot;"
+						android:textSize="16sp"
+						android:checked="true"
+						app:buttonTint="@color/color_button_bg"
+						android:textColor="@color/color_text_primary" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear_sort_all"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:orientation="horizontal">
+					<RadioButton
+						android:id="@+id/radiobutton_sort_all"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Сортировка всей памяти"
+						android:textSize="16sp"
+						app:buttonTint="@color/color_button_bg"
+						android:textColor="@color/color_text_primary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear_sortevery"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:orientation="horizontal">
+				<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/textinputlayout"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+					<EditText
+						android:id="@+id/edittextSortEvery"
+						android:layout_width="0dp"
+						android:layout_height="0dp"
+						android:padding="8dp"
+						android:textSize="12sp"
+						android:hint="Edit Text" />
+				</com.google.android.material.textfield.TextInputLayout>
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear_statistic"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@drawable/bg_card"
+			android:layout_margin="8dp"
+			android:padding="16dp">
+			<TextView
+				android:id="@+id/textview_statistic"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Отсортировано файлов: 0\n\nПапок создано: 0"
+				android:textColor="@color/color_text_secondary"
+				android:textSize="16sp" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear_4D_84NN3R"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="8dp"
+			android:background="@android:color/transparent"
+			android:orientation="horizontal" />
+	</LinearLayout>
+</LinearLayout>
